@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+<title>KJ7ILJ</title>
+<link rel = "stylesheet" type = "text/css" href = "style.css" />
+<body>
+<header>
+<h1>KJ7ILJ</h1>
+<h4 style = "text-align:center">KJ7ILJ.com - The official website of KJ7ILJ/MaxIsANerd!</h4>
+</header>
+<div class = "column side">
+<li><a href = "index.html">Most Recent Post</a></li>
+<li><a href = "postsearch.html">Post Search</a></li>
+<li><a href = "https://www.youtube.com/channel/UC-iROrlpdtStyyMAHKC7LAA">YouTube</a></li>
+<li><a href = "aboutme.html">About Me</a></li>
+</div>
+<div class = "column middle">
+<h2 style = "text-align:center">10/6/2019: OSARC V1</h2>
+<p>OSARC V1, or the "Open Source Advanced Rocketry Computer", is a project I've been working on for the past couple weeks. OSARC V1 is a 
+traditional dual-deploy altimeter, GPS tracker, datalogger, and stabilization system all in one board.
+</p>
+<p>
+OSARC V1 is based around the ATMEGA328P-AU
+microcontroller, an 8-bit AVR from Atmel capable of running the Arduino bootloader. The ATMEGA is connected to motion sensors, a GPS, and a 425-502MHz
+transceiver. The ATMEGA328P-AU (from now on referred to as the microcontroller/MCU) runs off of a 16MHz crystal, enabling operation at the highest
+speed possible. The MCU connects to a gyroscope, accelerometer, magnetometer, barometer/temperature sensor, and GPS through a combination of I2C, SPI,
+and UART communication. All sensors except for the magnetometer are connected through either SPI or UART to maximize connection speed. The
+magnetometer was connected through I2C to avoid the hassle and increased processing times of bit-bashing a 2-wire SPI setup.
+</p>
+<p>
+The sensors that enable OSARC V1 to determine its position and perform tasks accordingly are:
+<ul>- An ADXL377BCPZ-RL7 200G 3-axis accelerometer </ul>
+<ul>- A L3GD20HTR 2000dps 3-axis gyroscope </ul> 
+<ul>- An IIS2MDCTR magnetometer </ul> 
+<ul>- A BMP388 barometer/temperature sensor </ul>
+<ul>- A uBlox MAX-M8W GPS/GLONASS/Galileo/Beidou module </ul> 
+</p>
+<p>
+Using these sensors, OSARC V1 can perform a variety of tasks, including stabilization ("heading hold") along the X, Y, and Z axes, event timing,
+datalogging, and any other function that may require motion and/or position data to complete.
+</p>
+<p>
+Maintaining a GPS lock for as large of a proportion of the rocket's flight as possible is challenging. Potential spinning and changing
+attitude between launch and landing makes it hard to keep the required number of satellites in view of the GPS for a large portion of the
+flight. To combat this problem, OSARC V1 has two GPS antennas. One is a small omnidirectional antenna designed to allow the rocket to maintain lock
+when the primary antenna is not facing the sky, and the second (primary) antenna is any GPS antenna that can be connected to the board through
+a uFL connector. I recommend a passive ceramic patch antenna, although any antenna providing no more than 3.5dB of gain at maximum should work.
+OSARC V1 has two ADL5541ACPZ-R7 amplifiers to add 11.2dB of gain to both the omnidirectional and primary antennas. The signal strengths of each
+amplified signal are compared and the better signal is passed to the GPS module through a diversity controller. Since the maximum safe
+input signal strength on the MAX-M8W GPS module is 15dBm, you need to pick a primary antenna that will not overload the GPS receiver.
+OSARC V1 is designed for a 3.04dB maximum, 18x18mm Taoglas ceramic patch antenna compatible with GPS, GLONASS, and Galileo. Countries using
+Beidou satellites should choose an alternate antenna with similar specifications for their rockets.
+</p>
+<p>
+OSARC V1 is not compatible with any sort of guidance system that cannot be controlled by a PWM or digital signal. OSARC V1's guidance
+outputs are set up as standard servo plugs so that servo-controlled fins can be connected to OSARC V1 and used to guide the rocket. The pins
+used for guidance equipment on OSARC V1 can also be used as digital inputs if needed. 
+</p>
+<p>
+The microcontroller's 8-bit architecture provides a good platform for simple development of basic stabilization and datalogging programs,
+but overall limits OSARC V1's performance. Specifically, the AVR's lack of ability to perform true floating-point math means that GPS coordinates
+cannot be processed at a high enough rate GPS-based guidance to be feasible. Additionally, limits placed on commercial uBlox GPS modules by their 
+manufacturer prevent operation beyond speeds over 500m/s, although such operation is allowed by ITAR under certain circumstances. My guess is that
+they put the 500m/s limit on their GPS units specifically because they don't want people guiding rockets with them.
+</p>
+<p>
+<div><b>Advice and legal disclaimer:</b></div>
+I would not recommend designing your own guidance system
+unless you are willing to destroy or lose your rocket.
+Additionally, the guidance system on any publicly released version of OSARC is not for
+targeting people or property with. It is purely for stabilization during flight. While I encourage you to work on anything that captures your
+interest related to rockets, make sure that you follow all applicable laws when doing so. By using OSARC hardware, software, systems, etc., 
+you agree that I cannot be held responsible for your actions or their consequences. Anything that happens, regardless of what it is or why it
+happened, is entirely your problem and legally your responsibility.
+</p>
+</div>
+<div class = "column side">
+<p>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+.column {
+	float: left;
+}
+
+.column.side {
+	width:20%
+}
+
+.column.middle {
+	width: 60%;
+	background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 600px) {
+	.column.side, .column.middle {
+		width:100%;
+	}
+}
+
+.header{
+	background-color: #FDFAC8;
+	text-align: center;
+	padding: 20px;
+}
+
+body {
+	background-color: #FDFAC8;
+	color: #000000;
+}
+
+h1 {
+	color: #000000;
+	text-align: center;
+}
+
+p {
+	color: #000000;
+	text-align: left;
+}
+
