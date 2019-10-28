@@ -6,7 +6,7 @@
 <body>
 <header>
 <h1>KJ7ILJ</h1>
-<h4 style = "text-align:center">KJ7ILJ.com - The official website of KJ7ILJ/MaxIsANerd!</h4>
+<h4 style = "text-align:center">KJ7ILJ.github.io - The official website of KJ7ILJ/MaxIsANerd!</h4>
 </header>
 <div class = "column side">
 <li><a href = "index.html">Most Recent Post</a></li>
@@ -16,38 +16,35 @@
 <li><a href = "aboutme.html">About Me</a></li>
 </div>
 <div class = "column middle">
-<h2 style = "text-align:center">10/7/2019: HD Video System for UAVs</h2>
-<p>Over the past 2 years or so, I have been working on my Nimbus project. For those of you 
-who may not know what the Nimbus project is, it's a VTOL made by Foxtech that I have been designing 
-my own systems for so that it can provide HD and thermal video over long range and extreme terrain. 
-The single most
-challenging part of this project has been the radio system. In fact, the Nimbus project was
-the source of my interest in radios, DSP, and linear algebra. Almost every single project 
-I have worked on over the past 2 years has been connected to my Nimbus project in one way
-or another. In fact, the Nimbus is the reason I started learning PCB design and amateur 
-RF and electrical engineering. So, let's move on to the meat of this post: the video system.
+<h2 style = "text-align:center">10/28/2019: Penguin Video Link Considerations</h2>
+<p>
+This update came a little earlier than expected, since I had much less trouble than I 
+initially anticipated figuring out discrete cosine transforms. "Penguin" is the name I've 
+chosen for my HD video link. There's no particular reason for the name, other than the fact 
+that I just happen to like penguins and I thought it sounds good. Anyways, on to the post.
 </p>
 <p>
-Plenty of solutions for creating asynchronous mesh networks of telemetry radios for control of Mavlink 
-enabled devices have existed for a while now and are readily available on the commercial market. One
-of these is the Australian company RFDesigns's RFD900x telemetry modem, which I am using to control 
-the Nimbus. However, nothing exists at the moment that can transmit HD video over long distances and 
-connect to a large network of repeaters to cover an area spanning over 150 miles. So, I need to design 
-my own system to do this. The general concept is fairly simple -- An analog video input is digitized, 
-compressed, and transmitted to a network of repeaters. When you get more specific is when things start 
-to appear complicated. An analog video input is passed to 
-a device that converts the colorspace from analog RGB to digital YCbCr. This digital image is then 
-broken into chunks, compressed using the XYZ compression algorithm, and each chunk is broadcasted 
-simultaneously using a spread-spectrum digital protocol. The bands that I am planning to 
-use for this are the 70cm and 33cm bands. On the 70cm band, baud rate is restricted to 56kbaud, 
-but above the 70cm band there are no restrictions on baud rate. Due to these restrictions, I will 
-probably just use the 70cm band for peripheral digital communications such as checksums and other 
-methods of verifying signal integrity.
+Penguin will use a combination of the 70cm and 23cm bands for video transmission, 
+and the 6m band for peripheral communication. The video stream will be in .xyz format, which 
+should provide enough speed for low-latency video streaming while maintaining a high 
+compression ratio. The stream size is 1280x720 pixels at 30 frames per second, which requires 
+about 83 MB/s of bandwidth uncompressed. Applying XYZ compression to this raw stream drops the 
+required bandwidth down to around only 3 MB/s. Using the Shannon-Hartley theorem, it can be 
+determined that at the target minimum SNR of 0.3 the required frequency bandwidth is 7.926 MHz 
+(which I will round up to 8MHz in the design). 
 </p>
 <p>
-I will continue to update my website on the progress of this project as I move forward. However, the 
-next update on this specific topic may not be for a little while so I can work out the details some 
-more.
+It's a well known fact that HD video systems typically have issues with graceful video breakup, 
+since losing an adequate signal means that instead of getting bits and pieces of your stream and 
+some static, you just lose whole chunks of your stream or the entire stream turns into a blue screen. 
+While achieving graceful video breakup is a priority in this project, I'm going to get a working 
+prototype done before I focus on this aspect.
+</p>
+<p>
+Currently, I'm working on making a breakout board for the TVP5150AM1 so I can experiment with 
+capturing video coming from a standard FPV camera using a Raspberry Pi or my desktop computer. I'm 
+also trying to get OpenCV to work in Visual Studio so that I can work on capturing and compressing 
+a live stream in XYZ format.
 </p>
 </div>
 <div class = "column side">
@@ -55,4 +52,3 @@ more.
 </div>
 </body>
 </html>
-
