@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+<head>
+<title>KJ7ILJ</title>
+<link rel = "stylesheet" type = "text/css" href = "style.css" />
+<body>
+<header>
+<h1>KJ7ILJ</h1>
+<h4 style = "text-align:center">KJ7ILJ.github.io - The official website of KJ7ILJ/MaxIsANerd!</h4>
+</header>
+<div class = "column side">
+<li><a href = "index.html">Most Recent Post</a></li>
+<li><a href = "postsearch.html">Post Search</a></li>
+<li><a href = "projects.html">Projects</a></li>
+<li><a href = "https://www.youtube.com/channel/UC-iROrlpdtStyyMAHKC7LAA">YouTube</a></li>
+<li><a href = "aboutme.html">About Me</a></li>
+</div>
+<div class = "column middle">
+<h2 style = "text-align:center">03/14/2020 - Update</h2>
+<p>
+I had a few clips on my phone that hadn't made it into a video yet so I figured I'd make a short update.</br></br>
+
+First, I printed a Vanguard JT FP lower receiver. Here's the parts list for the gun:
+<li>Del-Ton AR-15 Complete Upper Assembly, 16", 5.56 NATO from Cheaper Than Dirt</li>
+<li>AR-15 Lower Build Kit from Black Rifle Depot</li>
+<li>UTG .223/5.56 Polymer 30 Round Mag</li>
+<li>Wolf Military Classic .223 Remington</li></br>
+Here's a few pictures from printing and the finished product:</br></br>
+First failed print:
+<img src="img/vanguard_1_6.jpg" class="center fit-image" alt="Vanguard 6">
+Successful print:
+<img src="img/vanguard_1_1.jpg" class="center fit-image" alt="Vanguard 1">
+<img src="img/vanguard_1_2.jpg" class="center fit-image" alt="Vanguard 2">
+<img src="img/vanguard_1_3.jpg" class="center fit-image" alt="Vanguard 3">
+<img src="img/vanguard_1_4.jpg" class="center fit-image" alt="Vanguard 4">
+<img src="img/vanguard_1_5.jpg" class="center fit-image" alt="Vanguard 5">
+I'll post a test video once I get it built. Since the threads where the tube for the stock screws in came out a little weird, I modified the stock tube for 
+the Warfairy P15 by shortening it using OpenSCAD and used it as a thread test. </br>
+<img src="img/threadtest_oscad.jpg" class="center fit-image" alt="Thread test OpenSCAD screenshot">
+<img src="img/threadtest_1.jpg" class="center fit-image" alt="Printed thread testing tool">
+<img src="img/vanguard_1_7.jpg" class="center fit-image" alt="Thread tester installed on receiver">
+It fit perfectly, so I guess the threads coming out funny is really only an aesthetic issue instead 
+of a functional one. The STL for my modified tube to test the threads can be found <a href="downloads/threadtest.stl" download>here</a>. The files for the 
+Warfairy P15 and the Vanguard lower receivers can be found in the FOSSCAD megapack (<a href="https://github.com/maduce/fosscad-repo">Github</a>, <a href="https://fosscad.org/">FOSSCAD</a>).
+</br></br>
+
+I had been having problems printing rectilinear supports using the default PrusaSlicer settings. Specifically, the supports would always fail at some point in the print. After a little tweaking, 
+I found out that reducing the support print speed to 35mm/s and using honeycomb supports fixed the problem completely. Additionally, the honeycomb supports feel stronger and are easier to remove. 
+I'm not sure why they aren't the default supports in PrusaSlicer.</br></br>
+
+For his engineering final project, my friend John Racy has been working on a nitinol actuator. He needs to have the wire mounted in a way such that the entire coil is one piece, but because he is 
+bolting the ends together he needs to have an electrically resistive coating that needs to be thermally conductive to allow for the wire to quickly cool down. While just bouncing ideas off each other, 
+we decided to try oxidizing copper to see how electrically resistive it was and how practical it was as a solution to his problem.
+<img src="img/eox_cu_1.jpg" class="center fit-image" alt="Close up of oxidizing copper">
+<img src="img/eox_cu_2.jpg" class="center fit-image" alt="Larger picture of oxidation setup">
+We didn't have a big enough power supply, so we kind of just made 
+bubbles instead of actually oxidizing anything. I think using white vinegar or Miracle-Gro to chemically oxidize the copper would be more effective.</br></br>
+
+Additionally, Emmett and I figured out that cutting a pipe in half straight down the middle is significantly more difficult than we thought it would be, even with a proper jig. We might change our 
+rail system to work off of two full copper tubes acting as rails that a sled travels down. This does change our projectile weight significantly, though.
+</p>
+</div>
+<div class = "column side">
+<p>
+</div>
+</body>
+</html>
