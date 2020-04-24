@@ -20,12 +20,12 @@
 <div class = "column middle">
 <h2 style = "text-align:center">03/03/2020 - Railgun Recalculation</h2>
 <p>
-As you can see from <a href="02272020.html">February 27th's post</a>, our 
-railgun's capacitor bank in series configuration does not provide sufficient current. 
-So, here's the math for a parallel capacitor bank. Note that with a sufficient number 
-of capacitors hooked up in series, the high voltage will outweight the compounding 
-ESR and you'll end up with a higher maximum current. However, with only 3 or 4 
-capacitors, parallel is the better way to hook up the capacitor bank. Let's calculate 
+As you can see from <a href="02272020.html">February 27th's post</a>, our
+railgun's capacitor bank in series configuration does not provide sufficient current.
+So, here's the math for a parallel capacitor bank. Note that with a sufficient number
+of capacitors hooked up in series, the high voltage will outweight the compounding
+ESR and you'll end up with a higher maximum current. However, with only 3 or 4
+capacitors, parallel is the better way to hook up the capacitor bank. Let's calculate
 the velocity of the projectile once more, but this time with the capacitors in parallel.</br>
 </br>
 Equations:
@@ -46,19 +46,19 @@ $$\mu_0=4\pi *10^{-7}$$
 $$m=0.005kg$$
 $$r=0.01m$$
 </br>
-So, now for the calculations. I'm not going to explain everything here, since 
+So, now for the calculations. I'm not going to explain everything here, since
 I already did in the above-mentioned post from February 27th.
 $$\rho_{copper}=1.68*10^{-8}\Omega *m$$
 $$A=3.95*10^{-5}m^2$$ (3/8" OD tube, 1/4" ID, 1/4 tube used)
 $$l=0.1m$$
-$$R=\frac{1.68*10^{-8}\Omega *m *0.1m}{3.95*10^{-5}m^2}=4.25*10^{-4}\Omega 
+$$R=\frac{1.68*10^{-8}\Omega *m *0.1m}{3.95*10^{-5}m^2}=4.25*10^{-4}\Omega
 = 0.000425\Omega$$
 There are 2 rails in series, so the total resistance is:
 $$2*0.000425=0.00085$$
 And now we can calculate the current:
 $$I=\frac{0.5V_R}{\frac{\Delta t}{C}+ESR_{DC}}$$
 $$I=\frac{0.5*2.7V}{\frac{1s}{1080F}+(0.00085+(3/0.0029)^{-1})}=492.23A$$
-That's significantly better, but still not super great. It's workable though. 
+That's significantly better, but still not super great. It's workable though.
 Let's calculate the velocity of a 5 gram projectile.
 $$B=\frac{\mu_0}{2\pi}\frac{I}{r}$$
 $$B=\frac{4\pi *10^{-7}}{2\pi}\frac{492.23}{0.01m}=0.01969T=196.9G$$
@@ -67,13 +67,11 @@ $$F=(492.23A)(0.1m)\times 0.01969T=0.96N$$
 $$a=\frac{0.96N}{0.005kg}=192\frac{m}{s^2}$$
 $$v_f^2=v_0^2+2a\Delta x$$
 $$v_f=\sqrt{2a\Delta x}=6.19m/s$$
-Better, but still not great. We'll do some tests, perfect our equation, then 
+Better, but still not great. We'll do some tests, perfect our equation, then
 build a bigger capacitor bank.
 
 </p>
 </div>
-<div class = "column side">
-<p>
-</div>
+<div class="column side"></div>
 </body>
 </html>
