@@ -44,17 +44,5 @@ Russia.
 </p>
 </div>
 <div class="column side"></div>
-<?php
-
-$filename = "hitcount.txt";
-$fp = fopen($filename, 'r');
-$count = fread($fp, filesize($filename));
-fclose($fp);
-$count = $count +1;
-$fp = fopen($filename, 'w');
-fwrite($fp, $count);
-fclose($fp);
-
-?>
 </body>
 </html>
