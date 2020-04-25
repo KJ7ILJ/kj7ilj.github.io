@@ -8,7 +8,7 @@
 
 .column.middle {
 	width: 60%;
-	background-color: #FFFFFF;
+	background-color: #121212;
 }
 
 @media screen and (max-width: 600px) {
@@ -24,19 +24,27 @@
 }
 
 body {
-	background-color: #FDFAC8;
-	color: #000000;
+	background-color: #121212;
+	color: #FFFFFF;
 }
 
 h1 {
-	color: #000000;
+	color: #FFFFFF;
 	text-align: center;
 }
 
+h2 {
+	background-color: #121212;
+	color: #FFFFFF;
+}
+
 p {
-	color: #000000;
+	background-color: #121212;
+	color: #FFFFFF;
 	text-align: left;
 }
+
+a:visited { text-decoration: none; color:#91ADD4; }
 
 .center {
 	display: block;
@@ -49,5 +57,3 @@ p {
 width: 100%;
 object-fit: cover;
 }
-
-
