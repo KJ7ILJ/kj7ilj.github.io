@@ -44,8 +44,8 @@ p {
 	text-align: left;
 }
 
-a:link { text-decoration: none; color:#91ADD4; }
 a:visited { text-decoration: none; color:#91ADD4; }
+a:link { text-decoration: none; color:#91ADD4; }
 
 .center {
 	display: block;
@@ -58,3 +58,12 @@ a:visited { text-decoration: none; color:#91ADD4; }
 width: 100%;
 object-fit: cover;
 }
+
+.rcorners1 {
+  border-radius: 25px;
+  border: 2px solid #FFFFFF;
+  padding: 20px;
+  width: auto;
+  height: auto;
+}
+
