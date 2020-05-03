@@ -44,6 +44,7 @@ p {
 	text-align: left;
 }
 
+a:link { text-decoration: none; color:#91ADD4; }
 a:visited { text-decoration: none; color:#91ADD4; }
 
 .center {
